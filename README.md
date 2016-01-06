@@ -1,6 +1,6 @@
 # Computerarchitectuur
 
-Vak wordt gegeven door Roel Vansteenbergen. Cursus is te vinden op http://roelvs.github.io/syll-comparch
+Vak wordt gegeven door Roel Vansteenbergen. Cursus is te vinden op https://roelvs.github.io/computerarchitectuur
 
 # Inhoud
 
