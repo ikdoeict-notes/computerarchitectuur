@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage[dutch]{babel}
+\usepackage{amsthm, amsmath, enumitem, fullpage, helvet, color}
+\usepackage[parfill]{parskip}
+\let\originalitem\item
+\renewcommand{\item}{\originalitem[]}
+\renewcommand*{\familydefault}{\sfdefault}
+\renewcommand{\d}{\textrm{d}\,}
+\usepackage{mathtools}
+
+
+\usepackage[active,tightpage]{preview}
+\renewcommand{\PreviewBorder}{1in}
+\newcommand{\Newpage}{\end{preview}\begin{preview}}
+
+\title{Formules Computerarchitectuur}
+\author{Haroen Viaene}
+\date{19 januari 2015}
+
+
+\begin{document}
+\begin{preview}
+
+\selectlanguage{dutch}
+
+\maketitle
+
+\Newpage
+
+\section{Computervoeding}
+
+\begin{itemize}
+	\item $P = U * I$ (vermogen = spanning * stroom)
+	\item $Q = I * t$ (capaciteit = stroom * t)
+\end{itemize}
+
+\Newpage
+
+\section{Geheugen}
+
+\begin{itemize}
+	\item Localiteitsprincipes
+	\begin{itemize}
+		\item tijdsgebonden: je zal iets niet lang erna opnieuw nodig hebben
+		\item plaatsgebonden: je zal de volgende data ook nodig hebben
+	\end{itemize}
+	\item 
+\end{itemize}
+
+\subsection{RAM}
+
+\begin{itemize}
+	\item DIMM: twee kanten werken apart, SIMM: onderling verbonden (omkeerbaar)
+	\item statisch: flipflop (cache), dynamisch condensator (destructief, herladen) (RAM)
+	\item $\frac{\frac{bytes}{transfer}\cdot \frac{transfers}{burst}\frac{cycli}{sec}}{\frac{cycli}{burst}}$ vb: $\frac{8 (=64 bit) \frac{bytes}{transfer}\cdot 4 (=1+1+1+1) \frac{transfers}{burst} 60 MHz \frac{cycli}{sec}}{14 (=5+3+3+3) \frac{cycli}{burst}}$
+	\begin{itemize}
+		\item FP-DRAM (fast pace): schrijft de paar volgende lijnen ook
+		\item EDO-RAM (extended data out): data blijft staan op de uitgang terwijl nieuwe al klaargezet wordt
+		\item SD-RAM (Synchronous DRAM): volgende kolommen worden sowieso gelezen op de snelheid van de klok
+		\item DDR (Double Data Rate): hogere kloksnelheid, idem voor DDR2,3,4
+	\end{itemize}
+	\item optimalisatie
+	\begin{itemize}
+		\item Interleaving: wissel af tussen twee banken om hersteltijd te vermijden
+		\item Dual channel: gebruik twee banken tegelijk
+		\item Buffered: slaat alle data op op een cache
+		\item is van toepassing op alle systemen
+	\end{itemize}
+\end{itemize}
+
+\Newpage
+
+\subsection{Cache}
+
+\begin{itemize}
+	\item Vervangen cache
+	\begin{itemize}
+		\item FIFO: first in first out 
+		\item LRU: least recently used
+		\item LFU: least frequently used
+		\item ARC: adaptive replacement cache (LFU en LRU combinatie)
+	\end{itemize}
+	\item types cache
+	\begin{itemize}
+		\item fully associative: elk deeltje vd RAM heeft een plaats
+		\item direct mapped:  elk deel vd geheugenbank heeft 1 plaats in cache, als overschreven wordt is algoritme nodig
+		\item set-associative: RAM opgedeeld in sets, binnen die sets wordt overschreven
+	\end{itemize}
+\end{itemize}
+
+\subsection{formule}
+\begin{itemize}
+	\item $lines = \frac{cache}{linesize}$
+	\item $sets = \frac{linesize}{wayset}$
+	\item $sets = 2^X \, en \, linesize = 2^Y$
+	\item $taggrootte = (bussize - X - Y) \cdot lines$
+	\item toegangstijd: $t_{totaal} = HR_{L1} \cdot t_{L1} + (1 - HR_{L1}) \cdot HR_{L2} \cdot t_{L2} + (1 - HR_{L1}) \cdot (1 - HR_{L2}) \cdot t_{RAM}$
+\end{itemize}
+
+
+\Newpage
+
+\section{Data}
+
+\begin{itemize}
+	\item sector: kleinste hoeveelheid door kop leesbaar
+	\item track: lijn op schijf
+	\item schijf: \dots
+	%%%TO FINISH SOON
+	\begin{itemize}
+		\item FCFS: first come first serve
+		\item SSTS: shortest seek time first
+		\item SCAN: van 0 $\rightarrow$ einde, doet in terugkeren waaraan er toch gepasseerd wordt
+		\item C-SCAN: slaat alles over in terugkeren
+		\item LOOK: SCAN, maar gaat niet tot einde
+		\item C-LOOK: LOOK, maar slaat alles over in terugkeren
+	\end{itemize}
+\end{itemize}
+
+\subsection{bestandssystemen}
+
+HALP %%to finish
+
+\end{preview}
+\end{document}
