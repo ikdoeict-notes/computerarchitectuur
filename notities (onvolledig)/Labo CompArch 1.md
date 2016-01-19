@@ -3,6 +3,7 @@
 ## 1.AANMAAK VM ##
 
 1.2. "Operating system not found". OS werd nog niet geïnstalleerd.
+
 1.3. ~320kB groot, geheugen voor virtuele hdd is dynamisch gealloceerd.
 
 >in VMware nieuwe CD drive toevoegen om ISO achteraf te mounten op de virtuele machine
@@ -30,9 +31,9 @@ DirectX9 graphics met WDDM1 driver
 2.6 Op Home networks worden homegroup en file sharing ingeschakeld, andere gebruikers kunnen uw pc 
 zien op het netwerk (network discovery).
 
-Work networks zijn homegroups uitgeschakeld + network discovery.
+  Work networks zijn homegroups uitgeschakeld + network discovery.
 
-Public networks is uw pc niet zichtbaar op het netwerk.
+  Public networks is uw pc niet zichtbaar op het netwerk.
 
 ## 3 BOOT SEQUENCE ##
 
