@@ -1,13 +1,13 @@
-**********LABO 1*********************
+# LABO 1
 
-** 1.AANMAAK VM **
+## 1.AANMAAK VM ##
 
-1.2. "Operating system not found". OS werd nog niet ge�nstalleerd.
+1.2. "Operating system not found". OS werd nog niet geïnstalleerd.
 1.3. ~320kB groot, geheugen voor virtuele hdd is dynamisch gealloceerd.
 
-// in VMware nieuwe CD drive toevoegen om ISO achteraf te mounten op de virtuele machine
+>in VMware nieuwe CD drive toevoegen om ISO achteraf te mounten op de virtuele machine
 
-** 2.INSTALLATIE WINDOWS **
+## 2.INSTALLATIE WINDOWS ##
 
 2.4a Belgian (Comma) wordt vooral gebruikt door Franstaligen, er zijn een aantal kleine
 verschillen in de numerieke rij en bij de >< toetsen rechtsonder. Belgian(Period) is gebruikelijk
@@ -34,14 +34,15 @@ Work networks zijn homegroups uitgeschakeld + network discovery.
 
 Public networks is uw pc niet zichtbaar op het netwerk.
 
-**3 BOOT SEQUENCE **
+## 3 BOOT SEQUENCE ##
 
 2. Virtual machine start direct windows 7 op. Harddisk staat in BIOS als default startmedium ingesteld.
 3. CD drive eerst in volgorde zetten in BIOS, op startup wordt optie gegeven van CD op te starten.
 
 
-**4 NETWERKINSTELLINGEN **
+## 4 NETWERKINSTELLINGEN ##
 
+```
 Bridged:        Direct geconnecteerd op fysisch netwerk, met eigen IP-adres.
 
 NAT:            Geconnecteerd op fysisch netwerk onder IP van de host.
@@ -54,11 +55,4 @@ Custom:         Kiezen uit een lijst van voorgemaakte virtuele netwerken
         
 LAN segments:   Gelijkaardig aan host-only maar zonder DHCP-server(auto verdeling IP-adressen).
                 Vooral voor compatibiliteit oudere versies VMware.
-
-
-
-
-
-
-
-
+```
